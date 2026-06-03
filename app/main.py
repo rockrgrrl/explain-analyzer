@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from app.models import AnalyzeRequest, AnalyzeResponse
 from app.analyzer import analyze_explain_output
 
@@ -11,6 +12,10 @@ app = FastAPI(
   description="Submit a PostgreSQL EXPLAIN ANALYZE output and get a structured performance analysis.",
   version="0.1.0"
 )
+
+@app.get("/", include_in_schema=False)
+def root():
+  return RedirectResponse(url="/docs")
 
 @app.get("/health")
 def health_check():
