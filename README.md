@@ -2,6 +2,8 @@
 
 EXPLAIN Analyzer is a tool that takes a PostgreSQL EXPLAIN ANALYZE query plan and returns a structured performance analysis. It's built for developers who want to identify and understand query performance problems without being a PostgreSQL expert. It surfaces issues like missing indexes, sequential scans, and poor planner estimates alongside easy to understand explanations and actionable recommendations.
 
+**Live API:** https://explain-analyzer.onrender.com/docs
+
 ## Motivation
 
 I built this after spending too much time staring at query plan output, not fully sure how to interpret it or where to even start. Parsing EXPLAIN ANALYZE output is tedious and what to target is easy to miss if you don't already know what to look for. I wanted a tool that could do initial triage for me and explain the problems simply and clearly.
